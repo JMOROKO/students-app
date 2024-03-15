@@ -51,6 +51,11 @@ public class StudentsAppApplication {
             patient2.setMalade(true);
             patientRepository.save(patient2);
 
+            List<Patient> lesMoroko = patientRepository.findByNomContaining("Moroko");
+            lesMoroko.forEach(System.out::println);
+            List<Patient> lesMoroko2 = patientRepository.findByNomContaining("%Moroko%");
+            lesMoroko2.forEach(System.out::println);
+
             //suppression du patient 3
             patientRepository.deleteById(Long.valueOf(3));
 
