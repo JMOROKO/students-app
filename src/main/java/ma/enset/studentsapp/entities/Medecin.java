@@ -17,5 +17,6 @@ public class Medecin {
     private String email;
     private String specialite;
     @OneToMany(mappedBy = "medecin", fetch = FetchType.LAZY)
+    //@OneToMany(mappedBy = "medecin")
     private Collection<RendezVous> rendezVous;
 }
