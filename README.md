@@ -5,7 +5,7 @@
 <img src="assets/2.png"/><br>
 3. Création de l'entité Patient<br>
 <img src="assets/3.png"/><br>
-4. Configuration de l'unité de persistence<br>
+4. Configuration de l'unité de persistence H2<br>
 <img src="assets/4.png"/><br>
 5. Création de l'interface Jpa repository<br>
 <img src="assets/5.png"/><br>
@@ -29,3 +29,4 @@
 <img src="assets/11.2-ajout-dependence.png"/><br>
 <img src="assets/12-reload-maven-project.png"/><br>
 <img src="assets/13-maj-application.proper.png" alt="">
+8. Ajout des tables supplémentaires: Médecin, rendez-vous, consultation, users et roles

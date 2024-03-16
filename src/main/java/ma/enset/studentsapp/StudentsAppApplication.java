@@ -25,7 +25,7 @@ public class StudentsAppApplication {
     CommandLineRunner start(PatientRepository patientRepository){
         return args -> {
             //creation de trois patient
-            Stream.of("Moroko jean", "Moroko Franck", "Moroko jean-renaud")
+            /*Stream.of("Moroko jean", "Moroko Franck", "Moroko jean-renaud")
                 .forEach(nom -> {
                     Patient patient = Patient.builder()
                             .nom(nom)
@@ -57,7 +57,7 @@ public class StudentsAppApplication {
             lesMoroko2.forEach(System.out::println);
 
             //suppression du patient 3
-            patientRepository.deleteById(Long.valueOf(3));
+            patientRepository.deleteById(Long.valueOf(3));*/
 
         };
     }
