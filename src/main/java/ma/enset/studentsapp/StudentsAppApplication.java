@@ -6,6 +6,7 @@ import ma.enset.studentsapp.repository.MedecinRepository;
 import ma.enset.studentsapp.repository.PatientRepository;
 import ma.enset.studentsapp.repository.RendezVousRepository;
 import ma.enset.studentsapp.services.IHospitalService;
+import ma.enset.studentsapp.services.UtilisateurService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,8 @@ public class StudentsAppApplication {
 
     @Bean
     CommandLineRunner start(
-            IHospitalService service
+            IHospitalService service,
+            UtilisateurService utilisateurService
     ){
         return args -> {
             //creation de trois patients
@@ -69,6 +71,39 @@ public class StudentsAppApplication {
                     .rendezVous(rendezVous)
                     .build();
             service.saveConsultation(consultation);
+
+            Utilisateur utilisateur = Utilisateur.builder()
+                    .name("user1")
+                    .password("123456")
+                    .build();
+            Utilisateur utilisateur2 = Utilisateur.builder()
+                    .name("admin")
+                    .password("123456")
+                    .build();
+            utilisateurService.saveUser(utilisateur);
+            utilisateurService.saveUser(utilisateur2);
+
+            Stream.of("STUDENT", "ADMIN")
+                .forEach(roleName -> {
+                    Role role = Role.builder()
+                            .roleName(roleName)
+                            .build();
+                    utilisateurService.saveRole(role);
+                });
+
+            utilisateurService.addRoleToUtilisateur("user1", "STUDENT");
+            utilisateurService.addRoleToUtilisateur("admin", "ADMIN");
+
+            try{
+                Utilisateur userAuth = utilisateurService.authenticate("user1", "123456");
+                System.out.println(userAuth.getName());
+                userAuth.getRoles().forEach(r -> {
+                    System.out.println(r);
+                });
+            }
+            catch(Exception e){
+                new RuntimeException(e);
+            }
         };
     }
 
