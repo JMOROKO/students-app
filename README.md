@@ -29,4 +29,25 @@
 <img src="assets/11.2-ajout-dependence.png"/><br>
 <img src="assets/12-reload-maven-project.png"/><br>
 <img src="assets/13-maj-application.proper.png" alt="">
-8. Ajout des tables supplémentaires: Médecin, rendez-vous, consultation, users et roles
+8. Ajout des tables supplémentaires: Médecin, rendez-vous, consultation, users et roles. <br>
+<h3>Modele</h3>
+<img src="assets/14-model.png" alt="">
+<img src="assets/14.1-model.png" alt="">
+<h3>Entities</h3>
+8.1. Medecin<br>
+<img src="assets/16-Medecin.png" alt="">
+8.2. Consultation<br>
+<img src="assets/15-Consultation.png" alt="">
+8.3. RendezVous<br>
+<img src="assets/17-RendezVous.png" alt="">
+8.4. StatusRDV<br>
+<img src="assets/18-StatusRDV.png" alt="">
+<h3>Repositories</h3>
+8.5. MedecinRepository<br>
+<img src="assets/20-MedecinRepository.png" alt="">
+8.6. ConsultationRepository<br>
+<img src="assets/19-ConsultationRepository.png" alt="">
+8.7. RendezVousRepository<br>
+<img src="assets/21-RendezVousRepsitory.png" alt="">
+8.8. PatientRepository<br>
+<img src="assets/22-patientRepository.png" alt="">
