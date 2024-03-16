@@ -12,7 +12,7 @@ import java.util.Date;
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class RendezVous {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private Date date;
     private StatusRDV status;
     @ManyToOne

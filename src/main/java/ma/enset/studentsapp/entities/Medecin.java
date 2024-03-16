@@ -11,8 +11,7 @@ import java.util.Collection;
 @Entity
 @AllArgsConstructor @NoArgsConstructor @Data @Builder
 public class Medecin {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String email;

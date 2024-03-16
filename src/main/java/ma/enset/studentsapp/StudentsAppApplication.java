@@ -24,8 +24,8 @@ public class StudentsAppApplication {
     @Bean
     CommandLineRunner start(PatientRepository patientRepository){
         return args -> {
-            //creation de trois patient
-            /*Stream.of("Moroko jean", "Moroko Franck", "Moroko jean-renaud")
+            //creation de trois patients
+            Stream.of("Moroko jean", "Moroko Franck", "Moroko jean-renaud")
                 .forEach(nom -> {
                     Patient patient = Patient.builder()
                             .nom(nom)
@@ -53,11 +53,11 @@ public class StudentsAppApplication {
 
             List<Patient> lesMoroko = patientRepository.findByNomContaining("Moroko");
             lesMoroko.forEach(System.out::println);
-            List<Patient> lesMoroko2 = patientRepository.findByNomContaining("%Moroko%");
+            List<Patient> lesMoroko2 = patientRepository.search("%Moroko%");
             lesMoroko2.forEach(System.out::println);
 
-            //suppression du patient 3
-            patientRepository.deleteById(Long.valueOf(3));*/
+            //suppression du patient ayant l'ID 3
+            patientRepository.deleteById(Long.valueOf(3));
 
         };
     }
