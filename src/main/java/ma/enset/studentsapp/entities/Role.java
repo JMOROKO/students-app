@@ -1,5 +1,6 @@
 package ma.enset.studentsapp.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,5 +18,6 @@ public class Role {
     @ManyToMany(fetch = FetchType.EAGER)
     //@JoinColumn(name="utilisateurs_roles")
     @ToString.Exclude
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Utilisateur> utilisateurs = new ArrayList<>();
 }
